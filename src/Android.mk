@@ -97,6 +97,7 @@ LOCAL_SRC_FILES:= \
   pulsecore/core-util.c  \
   pulsecore/dynarray.c  \
   pulsecore/fdsem.c \
+  pulsecore/g711.c \
   pulsecore/flist.c  \
   pulsecore/hashmap.c  \
   pulsecore/i18n.c \
@@ -104,6 +105,7 @@ LOCAL_SRC_FILES:= \
   pulsecore/iochannel.c  \
   pulsecore/ioline.c  \
   pulsecore/ipacl.c  \
+  pulsecore/json.c \
   pulsecore/lock-autospawn.c  \
   pulsecore/log.c  \
   pulsecore/mcalign.c  \
@@ -137,7 +139,8 @@ LOCAL_SRC_FILES:= \
   pulsecore/strlist.c  \
   pulsecore/tagstruct.c  \
   pulsecore/thread-posix.c \
-  pulsecore/time-smoother.c  \
+  pulsecore/time-smoother.c \
+  pulsecore/time-smoother_2.c \
   pulsecore/tokenizer.c  \
   pulsecore/usergroup.c  \
   pulse/direction.c \
@@ -148,7 +151,6 @@ LOCAL_SRC_FILES:= \
   pulse/fork-detect.c  \
   pulse/format.c \
   pulse/introspect.c \
-  pulse/json.c \
   pulse/mainloop-api.c \
   pulse/mainloop.c \
   pulse/mainloop-signal.c \
@@ -169,9 +171,10 @@ LOCAL_SRC_FILES:= \
 
 LOCAL_C_INCLUDES += external/json-c \
   external/alsa-lib/include \
+  external/libsndfile/include \
   external/libsndfile/src
 
-LOCAL_CFLAGS := -std=gnu99 $(PA_DEFINES) -DHAVE_SYS_MMAN_H -D_GNU_SOURCE
+LOCAL_CFLAGS := -std=gnu11 $(PA_DEFINES) -DHAVE_SYS_MMAN_H -D_GNU_SOURCE
 LOCAL_MODULE := libpulse
 LOCAL_PROPRIETARY_MODULE := true
 LOCAL_SHARED_LIBRARIES:= libjson libasound libsndfile
