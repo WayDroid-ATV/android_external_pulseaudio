@@ -414,7 +414,7 @@ char *pa_proplist_to_string_sep(const pa_proplist *p, const char *sep) {
                     break;
 
                 pa_assert(*t == '"');
-                pa_strbuf_puts(buf, "\\\"");
+                pa_strbuf_puts(buf, "\"");
 
                 t++;
             }

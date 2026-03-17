@@ -64,7 +64,7 @@ START_TEST (proplist_test) {
     pa_proplist_free(b);
     pa_proplist_free(c);
 
-    text = "  eins = zwei drei = \"\\\"vier\\\"\" fuenf=sechs sieben ='\\a\\c\\h\\t\\'\\\"' neun= hex:0123456789abCDef ";
+    text = "  eins = zwei drei = \"\"vier\"\" fuenf=sechs sieben ='\\a\\c\\h\\t\\'\"' neun= hex:0123456789abCDef ";
 
     pa_log_debug("%s", text);
     d = pa_proplist_from_string(text);

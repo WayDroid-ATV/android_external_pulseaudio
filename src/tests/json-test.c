@@ -32,7 +32,7 @@ START_TEST (string_test) {
     unsigned int i;
     const char *strings_parse[] = {
         "\"\"", "\"test\"", "\"test123\"", "\"123\"", "\"newline\\n\"", "\"  spaces \"",
-        "   \"lots of spaces\"     ", "\"esc\\nape\"", "\"escape a \\\" quote\"",
+        "   \"lots of spaces\"     ", "\"esc\\nape\"", "\"escape a \" quote\"",
     };
     const char *strings_compare[] = {
         "", "test", "test123", "123", "newline\n", "  spaces ",

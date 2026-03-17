@@ -285,11 +285,11 @@ START_TEST (test_escape) {
     pa_xfree(value);
 
     value = pa_escape("\\", "bcd");
-    ck_assert_str_eq(value, "\\\\");
+    ck_assert_str_eq(value, "\\");
     pa_xfree(value);
 
     value = pa_escape("\\", NULL);
-    ck_assert_str_eq(value, "\\\\");
+    ck_assert_str_eq(value, "\\");
     pa_xfree(value);
 }
 END_TEST
@@ -306,7 +306,7 @@ START_TEST (test_unescape) {
     ck_assert_str_eq(value, "abcde");
     pa_xfree(value);
 
-    value = pa_unescape(pa_xstrdup("\\\\"));
+    value = pa_unescape(pa_xstrdup("\\"));
     ck_assert_str_eq(value, "\\");
     pa_xfree(value);
 }

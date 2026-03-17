@@ -35,7 +35,7 @@ START_TEST (proplist_modargs_test) {
     char *v;
     const char *x[] = { "foo", NULL };
 
-    ma = pa_modargs_new("foo='foobar=waldo foo2=\"lj\\\"dhflh\" foo3=\"kjlskj\\'\"'", x);
+    ma = pa_modargs_new("foo='foobar=waldo foo2=\"lj\"dhflh\" foo3=\"kjlskj\\'\"'", x);
     fail_unless(ma != NULL);
     a = pa_proplist_new();
     fail_unless(a != NULL);
