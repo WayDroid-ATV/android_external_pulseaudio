@@ -29,7 +29,6 @@ cc_defaults {
         "-DHAVE_BYTESWAP_H=1",
         "-DHAVE_CLOCK_GETTIME=1",
         "-DHAVE_COREAUDIO=0",
-        "-DHAVE_CPUID_H=1",
         "-DHAVE_CTIME_R=1",
         "-DHAVE_DECL_ENVIRON=1",
         "-DHAVE_DECL_SOUND_PCM_READ_BITS=1",
@@ -138,6 +137,15 @@ cc_defaults {
         "-DPA_SYSTEM_CONFIG_PATH=\"/vendor/etc/pulse\"",
         "-DPA_SYSTEM_RUNTIME_PATH=\"/run/user/1000/pulse\"",
     ],
+
+    arch: {
+        x86: {
+            cflags: ["-DHAVE_CPUID_H=1"],
+        },
+        x86_64: {
+            cflags: ["-DHAVE_CPUID_H=1"],
+        },
+    },
 }
 
 cc_library_shared {
